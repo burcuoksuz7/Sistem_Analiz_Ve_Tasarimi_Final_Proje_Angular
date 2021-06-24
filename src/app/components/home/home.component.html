@@ -1,0 +1,23 @@
+
+
+<div class="d-flex justify-content-center">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let urun of urunler">
+  
+        <div class="card" style="width: 24 rem;">
+          <img class="card-img-top" src="{{urun?.urunGorsel}}" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{urun?.urunAd}}</h2>
+            <b class="card-price">{{urun?.urunFiyat}} ₺</b>
+            <p class="card-text">{{urun?.urunAciklama}}</p>
+            <button class="btn btn-primary" (click)="SepeteEkle(urun)">Sepete Ekle</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+</div>

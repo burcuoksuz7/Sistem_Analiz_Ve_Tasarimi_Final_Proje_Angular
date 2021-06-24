@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+<div class="container">
+  <form [formGroup]="frm">
+    <mat-form-field appearance="outline">
+      <mat-label>Ürün Ad</mat-label>
+      <input matInput placeholder="Ürün Ad" formControlName="urunAd" name="urunAd" required type="text">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Fiyat</mat-label>
+      <input matInput placeholder="Fiyat" formControlName="urunFiyat" name="urunFiyat" required type="number">
+    </mat-form-field>   
+    <mat-form-field appearance="outline">
+      <mat-label>Açıklama</mat-label>
+      <input matInput placeholder="Açıklama" formControlName="urunAciklama" name="urunAciklama" required type="text">
+    </mat-form-field>   
+    <mat-form-field appearance="outline">
+      <mat-label>Görsel</mat-label>
+      <input matInput placeholder="Görsel" formControlName="urunGorsel" name="urunGorsel" required type="text">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Ürün Kategori Id</mat-label>
+      <mat-select formControlName="urunKatId" name="urunKatId" >
+        <mat-option *ngFor="let kategori of kategoriler" [value]="kategori.kategoriId">
+          {{kategori.kategoriAd}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>   
+  </form>
+
+  <button mat-raised-button color="primary" [disabled]="frm.invalid"
+    (click)="dialogRef.close(frm.value)">Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+</div>

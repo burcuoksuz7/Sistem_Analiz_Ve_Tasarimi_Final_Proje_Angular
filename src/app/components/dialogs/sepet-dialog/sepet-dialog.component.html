@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>Sepet</span>
+</mat-toolbar>
+<div class="container">
+  <ul class="list-group mb-3">
+    <li class="list-group-item" *ngFor="let urun of urunler">{{urun.urunAd}}</li>
+  </ul>
+
+  <button mat-raised-button color="primary" (click)="dialogRef.close()">Şiparişi Tamamla</button> &nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">Alışverişe Devam Et</button>
+</div>

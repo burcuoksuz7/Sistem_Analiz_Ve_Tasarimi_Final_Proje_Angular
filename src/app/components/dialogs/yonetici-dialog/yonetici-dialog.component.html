@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{dialogBaslik}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">  
+
+<mat-form-field appearance="fill">
+   <mat-label>Yönetici Adı</mat-label>
+   <input matInput placeholder="Yönetici Adı" formControlName="yoneticiAd" name="yoneticiAd" required type="text">
+ </mat-form-field>
+
+
+ <mat-form-field appearance="fill">
+     <mat-label>Yönetici Şifre</mat-label>
+  <input matInput placeholder="Yönetici Şifre" formControlName="yoneticiSifre" name="yoneticiSifre" required type="text">
+</mat-form-field>
+
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button color="primary" mat-button mat-dialog-close (click)="dialogRef.close(form.value)">Ekle</button> &nbsp;
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button color="warn"mat-button (click)="dialogRef.close()">Vazgeç</button>
+</mat-dialog-actions>
+
+
